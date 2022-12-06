@@ -6,13 +6,9 @@ import android.graphics.Point
 import android.graphics.Rect
 
 
-abstract class Player(val rect: Rect, val color:Int) : GameObject {
+ class Player(val rect: Rect, val color:Int) : GameObject {
 
 
-
-    open fun getRectangle(): Rect? {
-        return rect
-    }
 
     override fun draw(canvas: Canvas?) {
         val paint = Paint()
@@ -22,7 +18,7 @@ abstract class Player(val rect: Rect, val color:Int) : GameObject {
 
     override fun update() {}
 
-    open fun update(point: Point) {
+    fun update(point: Point) {
 
         //Set new location of the user
         rect.set(
